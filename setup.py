@@ -17,17 +17,18 @@ setup(
         "setuptools",
         "PyYAML >= 3.11",
         "xmltodict >= 0.11.0",
-        "argcomplete >= 1.8.1"
+        "argcomplete >= 1.8.1",
+        "toml >= 0.9.4"
     ],
     tests_require=tests_require,
     extras_require={
         "test": tests_require,
-        "toml": ["toml >= 0.9.4"]
     },
     packages=find_packages(exclude=["test"]),
     include_package_data=True,
     entry_points={
         'console_scripts': [
+            'tq=yq:tq_cli',
             'yq=yq:cli',
             'xq=yq:xq_cli'
         ],
